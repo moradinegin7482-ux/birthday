@@ -9,6 +9,10 @@
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -20,35 +24,57 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
+
     background:
-        radial-gradient(circle at top, #18233d 0%, #080b13 45%, #030407 100%);
+        linear-gradient(
+            rgba(3, 7, 15, 0.32),
+            rgba(3, 7, 15, 0.48)
+        ),
+        url("2312403.jpg") center center / cover fixed no-repeat;
+
     color: #f5f0e6;
     font-family: Georgia, "Times New Roman", serif;
 }
 
-/* ---------- Main container ---------- */
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container {
     width: 92%;
-    max-width: 760px;
+    max-width: 820px;
     margin: auto;
-    padding: 35px 0 60px;
+    padding: 35px 0 70px;
 }
 
-/* ---------- Cards ---------- */
+
+/* =========================
+   GLASS CARDS
+========================= */
 
 .card {
-    background: rgba(7, 11, 20, 0.93);
-    border: 1px solid rgba(212, 175, 55, 0.35);
-    border-radius: 24px;
-    padding: 30px 22px;
+    background: rgba(8, 12, 22, 0.32);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    border-radius: 26px;
+
+    padding: 32px 25px;
+
     box-shadow:
-        0 20px 70px rgba(0,0,0,.55),
-        0 0 35px rgba(212,175,55,.05);
+        0 25px 80px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.16),
+        0 0 35px rgba(212,175,55,.08);
+
     animation: cardAppear 1.2s ease forwards;
 }
 
 @keyframes cardAppear {
+
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -58,41 +84,74 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
-/* ---------- Titles ---------- */
+
+/* =========================
+   TITLES
+========================= */
 
 h1 {
     text-align: center;
+
     font-size: 30px;
     font-weight: normal;
+
     color: #f0d477;
+
     letter-spacing: .5px;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.5);
 }
 
 h2 {
     text-align: center;
+
     color: #e3c45d;
+
     font-weight: normal;
-    margin-top: 40px;
+
+    margin-top: 42px;
+    margin-bottom: 28px;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.5);
 }
 
 .subtitle {
     text-align: center;
+
     line-height: 2;
-    color: #d5d0c5;
+
+    color: #eee9df;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.6);
 }
 
-/* ---------- Star ---------- */
+
+/* =========================
+   STAR
+========================= */
 
 .star {
     text-align: center;
+
     color: #d4af37;
+
     font-size: 25px;
-    animation: starGlow 2.5s ease-in-out infinite;
+
+    animation:
+        starGlow 2.5s ease-in-out infinite;
+
+    text-shadow:
+        0 0 15px rgba(212,175,55,.4);
 }
 
 @keyframes starGlow {
+
     0%,100% {
         opacity: .65;
         transform: scale(1);
@@ -102,230 +161,403 @@ h2 {
         opacity: 1;
         transform: scale(1.12);
     }
+
 }
 
-/* ---------- Password ---------- */
+
+/* =========================
+   PASSWORD
+========================= */
 
 input {
     width: 100%;
+
     padding: 15px;
+
     margin-top: 20px;
+
     border-radius: 14px;
+
     border: 1px solid rgba(212,175,55,.45);
-    background: #050811;
+
+    background: rgba(3,7,15,.55);
+
     color: white;
+
     font-size: 18px;
+
     text-align: center;
+
     outline: none;
 }
 
 input:focus {
+
     border-color: #e3c45d;
-    box-shadow: 0 0 15px rgba(212,175,55,.15);
+
+    box-shadow:
+        0 0 15px rgba(212,175,55,.18);
 }
 
+
 button {
+
     width: 100%;
+
     padding: 15px;
+
     margin-top: 12px;
+
     border: none;
+
     border-radius: 14px;
-    background: linear-gradient(
-        90deg,
-        #b38b25,
-        #ead06b,
-        #b38b25
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            #b38b25,
+            #ead06b,
+            #b38b25
+        );
+
     color: #111;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     transition: .3s ease;
 }
 
 button:hover {
+
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(212,175,55,.2);
+
+    box-shadow:
+        0 8px 25px rgba(212,175,55,.25);
 }
 
 .error {
+
     text-align: center;
+
     color: #e9a4a4;
+
     margin-top: 10px;
 }
 
-/* ---------- Letter page ---------- */
+
+/* =========================
+   LETTER PAGE
+========================= */
 
 #letterPage {
     display: none;
 }
 
-/* ---------- Song ---------- */
+
+/* =========================
+   SONG
+========================= */
 
 .music {
+
     display: block;
+
     text-align: center;
+
     text-decoration: none;
+
     color: #f4dc82;
 
-    border: 1px solid rgba(212,175,55,.4);
+    border: 1px solid rgba(212,175,55,.45);
+
     border-radius: 14px;
 
     padding: 15px;
-    margin: 20px 0;
 
-    background: rgba(212,175,55,.03);
+    margin: 20px 0 35px;
+
+    background:
+        rgba(212,175,55,.07);
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
 
     transition: .3s ease;
 }
 
 .music:hover {
-    background: rgba(212,175,55,.09);
-    transform: translateY(-2px);
+
+    background:
+        rgba(212,175,55,.14);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(212,175,55,.12);
 }
 
-/* ---------- Russian letter ---------- */
+
+/* =========================
+   LETTER
+========================= */
 
 .letter {
+
+    width: 100%;
+}
+
+
+/* =========================
+   RUSSIAN TEXT
+========================= */
+
+.ru {
+
     direction: ltr;
+
     text-align: left;
 
     font-size: 17px;
+
     line-height: 2.05;
 
-    color: #eee9df;
+    color: #fffdf8;
 
-    white-space: normal;
+    text-shadow:
+        0 2px 7px rgba(0,0,0,.65);
+
+    margin: 0 0 7px;
+
 }
 
-/* Each paragraph */
 
-.paragraph {
+/* =========================
+   PERSIAN TRANSLATION
+========================= */
+
+.fa {
+
+    direction: rtl;
+
+    text-align: right;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 2.05;
+
+    color: #f1dfaa;
+
+    text-shadow:
+        0 2px 7px rgba(0,0,0,.65);
+
+    margin: 0 0 26px;
+
+    padding-right: 12px;
+
+    border-right:
+        2px solid rgba(212,175,55,.35);
+}
+
+
+/* =========================
+   PARAGRAPH ANIMATION
+========================= */
+
+.letter-block {
+
     opacity: 0;
-    transform: translateY(22px);
 
-    margin: 0 0 25px;
+    transform:
+        translateY(22px);
 
-    animation: paragraphAppear 1.2s ease forwards;
+    animation:
+        paragraphAppear 1s ease forwards;
 }
 
-/* Delayed appearance */
-
-.paragraph:nth-child(1) { animation-delay: .2s; }
-.paragraph:nth-child(2) { animation-delay: .4s; }
-.paragraph:nth-child(3) { animation-delay: .6s; }
-.paragraph:nth-child(4) { animation-delay: .8s; }
-.paragraph:nth-child(5) { animation-delay: 1s; }
-.paragraph:nth-child(6) { animation-delay: 1.2s; }
-.paragraph:nth-child(7) { animation-delay: 1.4s; }
-.paragraph:nth-child(8) { animation-delay: 1.6s; }
-.paragraph:nth-child(9) { animation-delay: 1.8s; }
-.paragraph:nth-child(10) { animation-delay: 2s; }
-.paragraph:nth-child(11) { animation-delay: 2.2s; }
-.paragraph:nth-child(12) { animation-delay: 2.4s; }
-.paragraph:nth-child(13) { animation-delay: 2.6s; }
-.paragraph:nth-child(14) { animation-delay: 2.8s; }
-.paragraph:nth-child(15) { animation-delay: 3s; }
-.paragraph:nth-child(16) { animation-delay: 3.2s; }
-.paragraph:nth-child(17) { animation-delay: 3.4s; }
-.paragraph:nth-child(18) { animation-delay: 3.6s; }
-.paragraph:nth-child(19) { animation-delay: 3.8s; }
-.paragraph:nth-child(20) { animation-delay: 4s; }
-.paragraph:nth-child(21) { animation-delay: 4.2s; }
-.paragraph:nth-child(22) { animation-delay: 4.4s; }
-.paragraph:nth-child(23) { animation-delay: 4.6s; }
-.paragraph:nth-child(24) { animation-delay: 4.8s; }
-.paragraph:nth-child(25) { animation-delay: 5s; }
-.paragraph:nth-child(26) { animation-delay: 5.2s; }
-.paragraph:nth-child(27) { animation-delay: 5.4s; }
-.paragraph:nth-child(28) { animation-delay: 5.6s; }
-.paragraph:nth-child(29) { animation-delay: 5.8s; }
-.paragraph:nth-child(30) { animation-delay: 6s; }
-.paragraph:nth-child(31) { animation-delay: 6.2s; }
-.paragraph:nth-child(32) { animation-delay: 6.4s; }
-.paragraph:nth-child(33) { animation-delay: 6.6s; }
-.paragraph:nth-child(34) { animation-delay: 6.8s; }
-.paragraph:nth-child(35) { animation-delay: 7s; }
-.paragraph:nth-child(36) { animation-delay: 7.2s; }
-.paragraph:nth-child(37) { animation-delay: 7.4s; }
-.paragraph:nth-child(38) { animation-delay: 7.6s; }
-.paragraph:nth-child(39) { animation-delay: 7.8s; }
-.paragraph:nth-child(40) { animation-delay: 8s; }
+.letter-block:nth-child(1) { animation-delay: .15s; }
+.letter-block:nth-child(2) { animation-delay: .25s; }
+.letter-block:nth-child(3) { animation-delay: .35s; }
+.letter-block:nth-child(4) { animation-delay: .45s; }
+.letter-block:nth-child(5) { animation-delay: .55s; }
+.letter-block:nth-child(6) { animation-delay: .65s; }
+.letter-block:nth-child(7) { animation-delay: .75s; }
+.letter-block:nth-child(8) { animation-delay: .85s; }
+.letter-block:nth-child(9) { animation-delay: .95s; }
+.letter-block:nth-child(10) { animation-delay: 1.05s; }
+.letter-block:nth-child(11) { animation-delay: 1.15s; }
+.letter-block:nth-child(12) { animation-delay: 1.25s; }
+.letter-block:nth-child(13) { animation-delay: 1.35s; }
+.letter-block:nth-child(14) { animation-delay: 1.45s; }
+.letter-block:nth-child(15) { animation-delay: 1.55s; }
+.letter-block:nth-child(16) { animation-delay: 1.65s; }
+.letter-block:nth-child(17) { animation-delay: 1.75s; }
+.letter-block:nth-child(18) { animation-delay: 1.85s; }
+.letter-block:nth-child(19) { animation-delay: 1.95s; }
+.letter-block:nth-child(20) { animation-delay: 2.05s; }
 
 @keyframes paragraphAppear {
 
     from {
         opacity: 0;
-        transform: translateY(22px);
+        transform:
+            translateY(22px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
 }
 
-/* ---------- Highlight words ---------- */
 
-.love {
-    color: #f0d477;
-}
-
-.highlight {
-    color: #e8ca68;
-}
-
-/* ---------- Ending ---------- */
+/* =========================
+   FINAL
+========================= */
 
 .final {
+
     text-align: center;
+
     color: #e8ca68;
-    line-height: 2;
+
+    line-height: 2.1;
 
     margin-top: 45px;
+
     padding-top: 25px;
 
-    border-top: 1px solid rgba(212,175,55,.2);
+    border-top:
+        1px solid rgba(212,175,55,.25);
 
-    animation: finalAppear 2s ease forwards;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.6);
+
+    animation:
+        finalAppear 2s ease forwards;
 }
 
 @keyframes finalAppear {
 
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform:
+            translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
 }
 
-/* ---------- Mobile ---------- */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
+    body {
+
+        background-attachment:
+            scroll;
+
+        background-position:
+            center center;
+    }
+
     .container {
+
         width: 94%;
+
         padding-top: 20px;
     }
 
     .card {
-        padding: 25px 18px;
-        border-radius: 20px;
+
+        padding:
+            25px 18px;
+
+        border-radius:
+            20px;
+
+        background:
+            rgba(8,12,22,.38);
+
+        backdrop-filter:
+            blur(13px);
+
+        -webkit-backdrop-filter:
+            blur(13px);
     }
 
     h1 {
-        font-size: 27px;
+
+        font-size:
+            27px;
     }
 
-    .letter {
-        font-size: 16px;
-        line-height: 2;
+    h2 {
+
+        font-size:
+            23px;
+    }
+
+    .letter .ru {
+
+        font-size:
+            16px;
+
+        line-height:
+            2;
+    }
+
+    .letter .fa {
+
+        font-size:
+            15px;
+
+        line-height:
+            2;
+
+        padding-right:
+            10px;
+    }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
     }
 
 }
@@ -336,16 +568,23 @@ button:hover {
 
 <body>
 
+
 <div class="container">
 
 
-<!-- ================= PASSWORD PAGE ================= -->
+<!-- ==========================================
+     PASSWORD PAGE
+========================================== -->
 
 <div class="card" id="passwordPage">
 
-    <div class="star">✦</div>
+    <div class="star">
+        ✦
+    </div>
 
-    <h1>یه چیزی فقط برای تو 🤍</h1>
+    <h1>
+        یه چیزی فقط برای تو 🤍
+    </h1>
 
     <p class="subtitle">
         این صفحه فقط برای توئه.<br>
@@ -363,18 +602,27 @@ button:hover {
         ورود 🤍
     </button>
 
-    <div class="error" id="error"></div>
+    <div
+        class="error"
+        id="error">
+    </div>
 
 </div>
 
 
-<!-- ================= LETTER PAGE ================= -->
+<!-- ==========================================
+     LETTER PAGE
+========================================== -->
 
 <div class="card" id="letterPage">
 
-    <div class="star">✦</div>
+    <div class="star">
+        ✦
+    </div>
 
-    <h1>برای قلبم 🤍</h1>
+    <h1>
+        برای قلبم 🤍
+    </h1>
 
     <p class="subtitle">
         یه آهنگ برای ما، و بعدش نامه‌ای که برای تو نوشتم.
@@ -387,420 +635,1209 @@ button:hover {
         class="music"
         href="https://soundcloud.com/daniyal_official/drug"
         target="_blank"
+        rel="noopener noreferrer"
     >
         🎵 Our Song
     </a>
 
 
-    <h2>نامه‌ای برای تو 💌</h2>
+    <h2>
+        نامه‌ای برای تو 💌
+    </h2>
 
 
-    <!-- ================= RUSSIAN LETTER ================= -->
+    <!-- ==========================================
+         LETTER
+    ========================================== -->
 
     <div class="letter">
 
 
-        <p class="paragraph">
-            ✨ Я даже не знаю, с чего именно начать это письмо, любовь моя.
-        </p>
+        <!-- 1 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            С того дня, когда ты появился в моей жизни?<br>
-            С первого воспоминания, которое мы создали вместе?<br>
-            Со всех дней, которые прошли рядом друг с другом после этого?<br>
-            Или с сегодняшнего дня — дня, когда я праздную твой день рождения? 🎂
-        </p>
+            <p class="ru">
+                ✨ Я даже не знаю, с чего именно начать это письмо, любовь моя.
+            </p>
 
+            <p class="fa">
+                ✨ حتی نمی‌دانم این نامه را دقیقاً از کجا شروع کنم، عشق من.
+            </p>
 
-        <p class="paragraph">
-            Наверное, не существует такого начала, которого было бы достаточно, чтобы сказать всё, что у меня в сердце.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Потому что некоторые чувства, когда пытаешься превратить их в слова, становятся меньше, чем то, что на самом деле происходит внутри тебя. 🤍
-        </p>
+        <!-- 2 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Но всё равно я хочу попытаться.
-        </p>
+            <p class="ru">
+                С того дня, когда ты появился в моей жизни?<br>
+                С первого воспоминания, которое мы создали вместе?<br>
+                Со всех дней, которые прошли рядом друг с другом после этого?<br>
+                Или с сегодняшнего дня — дня, когда я праздную твой день рождения? 🎂
+            </p>
 
+            <p class="fa">
+                از همان روزی که وارد زندگی من شدی؟<br>
+                از اولین خاطره‌ای که با هم ساختیم؟<br>
+                از تمام روزهایی که بعد از آن کنار یکدیگر گذراندیم؟<br>
+                یا از امروز؛ روزی که تولدت را جشن می‌گیرم؟ 🎂
+            </p>
 
-        <p class="paragraph">
-            Хочу хотя бы один раз собрать в слова всё то, что иногда теряется среди наших обычных разговоров, смеха, ссор, скучания друг по другу и даже наших молчаний.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Любовь моя, 🫶🏻
-        </p>
+        <!-- 3 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            ты для меня не просто человек, которого я люблю.
-        </p>
+            <p class="ru">
+                Наверное, не существует такого начала, которого было бы достаточно, чтобы сказать всё, что у меня в сердце.
+            </p>
 
+            <p class="fa">
+                شاید هیچ شروعی وجود نداشته باشد که برای گفتن تمام چیزهایی که در قلبم دارم کافی باشد.
+            </p>
 
-        <p class="paragraph">
-            Ты стал частью моих дней.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Тем человеком, которому иногда хочется первым рассказать о том, что со мной произошло.
-        </p>
+        <!-- 4 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Тем, о ком я иногда думаю даже тогда, когда злюсь.
-        </p>
+            <p class="ru">
+                Потому что некоторые чувства, когда пытаешься превратить их в слова, становятся меньше, чем то, что на самом деле происходит внутри тебя. 🤍
+            </p>
 
+            <p class="fa">
+                چون بعضی احساسات وقتی تلاش می‌کنی آن‌ها را به کلمات تبدیل کنی، کوچک‌تر از چیزی می‌شوند که واقعاً درونت اتفاق می‌افتد. 🤍
+            </p>
 
-        <p class="paragraph">
-            Тем, чьё имя теперь связано с огромным количеством моих воспоминаний. 📖🤍
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Когда я думаю о нас, я вспоминаю не только хорошие моменты.
-        </p>
+        <!-- 5 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Я помню всё.
-        </p>
+            <p class="ru">
+                Но всё равно я хочу попытаться.
+            </p>
 
+            <p class="fa">
+                اما با این حال می‌خواهم تلاش کنم.
+            </p>
 
-        <p class="paragraph">
-            Наш смех, наши шутки, моменты, когда мы скучали друг по другу, расстояния между нами, наши ссоры и примирения, моменты, когда мне хотелось остановить время и оставить только этот миг. 🫂
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            И даже те дни, когда никто из нас не знал, как правильно пережить что-то сложное.
-        </p>
+        <!-- 6 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Наверное, именно это и делает нашу историю настоящей для меня.
-        </p>
+            <p class="ru">
+                Хочу хотя бы один раз собрать в слова всё то, что иногда теряется среди наших обычных разговоров, смеха, ссор, скучания друг по другу и даже наших молчаний.
+            </p>
 
+            <p class="fa">
+                می‌خواهم حداقل یک‌بار تمام چیزهایی را که گاهی میان گفت‌وگوهای معمولی‌مان، خنده‌ها، دعواها، دلتنگی‌هایمان برای یکدیگر و حتی سکوت‌هایمان گم می‌شوند، در قالب کلمات جمع کنم.
+            </p>
 
-        <p class="paragraph">
-            Потому что отношения — это не только красивые и счастливые дни.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Иногда два человека не понимают друг друга.<br>
-            Иногда они устают.<br>
-            Иногда говорят то, чего не должны были говорить.<br>
-            Иногда расстояние между ними становится больше, чем им хотелось бы.
-        </p>
+        <!-- 7 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Но среди всего этого остаётся что-то, что заставляет нас всё ещё помнить хорошие моменты, всё ещё быть важными друг для друга и всё ещё видеть в своих мыслях образ нашего общего «мы». 🤍
-        </p>
+            <p class="ru">
+                Любовь моя, 🫶🏻
+            </p>
 
+            <p class="fa">
+                عشق من، 🫶🏻
+            </p>
 
-        <p class="paragraph">
-            И для меня это очень важно.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Любовь моя, ✨
-        </p>
+        <!-- 8 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            возможно, ты даже не знаешь, какое большое место в моей памяти занимают некоторые самые простые твои поступки.
-        </p>
+            <p class="ru">
+                ты для меня не просто человек, которого я люблю.
+            </p>
 
+            <p class="fa">
+                تو برای من فقط کسی نیستی که دوستش دارم.
+            </p>
 
-        <p class="paragraph">
-            Иногда одна фраза, один взгляд, одна улыбка, короткое сообщение или даже самый обычный момент, который ты сам мог забыть через несколько минут, для меня становился воспоминанием, которое я помню до сих пор.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Я не всегда запоминаю в деталях большие события своей жизни.
-        </p>
+        <!-- 9 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Но некоторые маленькие моменты с тобой почему-то навсегда остались в моей памяти. 🌙
-        </p>
+            <p class="ru">
+                Ты стал частью моих дней.
+            </p>
 
+            <p class="fa">
+                تو تبدیل به بخشی از روزهای من شده‌ای.
+            </p>
 
-        <p class="paragraph">
-            Наверное, потому что в них был ты.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            И мне кажется, это одна из самых удивительных вещей в любви к человеку:
-        </p>
+        <!-- 10 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            его присутствие со временем начинает придавать смысл даже самым обычным вещам.
-        </p>
+            <p class="ru">
+                Тем человеком, которому иногда хочется первым рассказать о том, что со мной произошло.
+            </p>
 
+            <p class="fa">
+                به همان آدمی تبدیل شده‌ای که گاهی دلم می‌خواهد اولین کسی باشی که اتفاقی را که برایم افتاده برایش تعریف می‌کنم.
+            </p>
 
-        <p class="paragraph">
-            Одна песня может напомнить о нём.<br>
-            Одна дата.<br>
-            Одна фраза.<br>
-            Какое-то определённое место.<br>
-            Даже совершенно обычное событие. 🎵
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            И вдруг посреди обычного дня ты понимаешь, что твои мысли снова вернулись к человеку, которого ты любишь.
-        </p>
+        <!-- 11 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Для меня очень многие из этих маленьких вещей — это ты.
-        </p>
+            <p class="ru">
+                Тем, о ком я иногда думаю даже тогда, когда злюсь.
+            </p>
 
+            <p class="fa">
+                همان کسی که گاهی حتی وقتی عصبانی هستم هم به او فکر می‌کنم.
+            </p>
 
-        <p class="paragraph">
-            Любовь моя, 🤍
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            я люблю тебя не только в те моменты, когда всё хорошо.
-        </p>
+        <!-- 12 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Я узнала тебя со всеми твоими сложностями.
-        </p>
+            <p class="ru">
+                Тем, чьё имя теперь связано с огромным количеством моих воспоминаний. 📖🤍
+            </p>
 
+            <p class="fa">
+                همان کسی که حالا اسمش با تعداد بسیار زیادی از خاطرات من گره خورده است. 📖🤍
+            </p>
 
-        <p class="paragraph">
-            С твоими мечтами, тревогами, упрямством, молчанием, смехом, хорошими днями и теми днями, когда ты сам, возможно, не совсем понимаешь, чего хочешь.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            И, наверное, для меня настоящая любовь именно в этом:
-        </p>
+        <!-- 13 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            не просто любить образ человека, которого ты создал в своей голове, а постепенно узнавать настоящего его — и, узнавая всё больше, всё равно продолжать ценить его. 🫶🏻
-        </p>
+            <p class="ru">
+                Когда я думаю о нас, я вспоминаю не только хорошие моменты.
+            </p>
 
+            <p class="fa">
+                وقتی به ما فکر می‌کنم، فقط لحظه‌های خوب را به یاد نمی‌آورم.
+            </p>
 
-        <p class="paragraph">
-            Я не хочу делать из тебя идеального человека.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Я просто хочу, чтобы ты оставался собой.
-        </p>
+        <!-- 14 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Тем самым человеком, у которого есть мечты, который иногда ошибается, учится, движется вперёд, иногда останавливается, а потом снова продолжает свой путь.
-        </p>
+            <p class="ru">
+                Я помню всё.
+            </p>
 
+            <p class="fa">
+                همه‌چیز را به یاد دارم.
+            </p>
 
-        <p class="paragraph">
-            И я очень хочу, чтобы та часть тебя, которая мечтает о будущем, всегда оставалась живой. ✨
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Я надеюсь, что ты добьёшься всего, ради чего стараешься.
-        </p>
+        <!-- 15 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Той жизни, которую ты представляешь в своих мечтах.
-        </p>
+            <p class="ru">
+                Наш смех, наши шутки, моменты, когда мы скучали друг по другу, расстояния между нами, наши ссоры и примирения, моменты, когда мне хотелось остановить время и оставить только этот миг. 🫂
+            </p>
 
+            <p class="fa">
+                خنده‌هایمان، شوخی‌هایمان، لحظه‌هایی که دلتنگ یکدیگر می‌شدیم، فاصله‌هایی که بینمان بود، دعواها و آشتی‌هایمان، و لحظه‌هایی که دلم می‌خواست زمان را متوقف کنم و فقط همان لحظه را نگه دارم. 🫂
+            </p>
 
-        <p class="paragraph">
-            Тех успехов, которые сегодня могут казаться ещё далёкими.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Того дня, когда ты сможешь оглянуться назад и сказать самому себе:
-        </p>
+        <!-- 16 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            «Я действительно смог». 🌟
-        </p>
+            <p class="ru">
+                И даже те дни, когда никто из нас не знал, как правильно пережить что-то сложное.
+            </p>
 
+            <p class="fa">
+                حتی آن روزهایی را که هیچ‌کداممان نمی‌دانستیم چطور باید از یک اتفاق سخت عبور کنیم.
+            </p>
 
-        <p class="paragraph">
-            И если однажды ты придёшь к этому дню, я надеюсь, что ты вспомнишь и тот путь, который прошёл.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Те дни, когда ты только начинал, когда многое ещё было неизвестно, но ты всё равно продолжал идти.
-        </p>
+        <!-- 17 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            И, возможно, я тоже буду маленькой частью этих воспоминаний. 🤍
-        </p>
+            <p class="ru">
+                Наверное, именно это и делает нашу историю настоящей для меня.
+            </p>
 
+            <p class="fa">
+                شاید دقیقاً همین است که داستان ما را برای من واقعی می‌کند.
+            </p>
 
-        <p class="paragraph">
-            Я не знаю, каким будет будущее, любовь моя.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Не знаю, где мы будем через несколько лет, что изменится, какие люди появятся в нашей жизни и какие дороги нам ещё предстоит пройти.
-        </p>
+        <!-- 18 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Но я знаю одно:
-        </p>
+            <p class="ru">
+                Потому что отношения — это не только красивые и счастливые дни.
+            </p>
 
+            <p class="fa">
+                چون یک رابطه فقط از روزهای زیبا و خوشحال‌کننده ساخته نشده است.
+            </p>
 
-        <p class="paragraph">
-            сегодня одно из моих самых больших желаний для тебя — чтобы жизнь была к тебе добра. 🌙
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Чтобы твоё сердце меньше уставало.<br>
-            Чтобы ты чаще улыбался.<br>
-            Чтобы всё, ради чего ты стараешься, однажды оказалось у тебя в руках.
-        </p>
+        <!-- 19 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Чтобы, идя к своим мечтам, ты никогда не потерял самого себя.
-        </p>
+            <p class="ru">
+                Иногда два человека не понимают друг друга.<br>
+                Иногда они устают.<br>
+                Иногда говорят то, чего не должны были говорить.<br>
+                Иногда расстояние между ними становится больше, чем им хотелось бы.
+            </p>
 
+            <p class="fa">
+                گاهی دو نفر یکدیگر را نمی‌فهمند.<br>
+                گاهی خسته می‌شوند.<br>
+                گاهی حرف‌هایی می‌زنند که نباید می‌زدند.<br>
+                گاهی فاصله‌ای که بینشان وجود دارد، بیشتر از چیزی می‌شود که می‌خواستند.
+            </p>
 
-        <p class="paragraph">
-            И если жизнь позволит, я хочу помнить твои дни рождения и через много лет. 🎂
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Возможно, однажды мы будем совершенно в другом месте, с жизнью, которую сегодня даже не можем представить.
-        </p>
+        <!-- 20 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            И, может быть, тогда мы снова посмотрим на это письмо и улыбнёмся.
-        </p>
+            <p class="ru">
+                Но среди всего этого остаётся что-то, что заставляет нас всё ещё помнить хорошие моменты, всё ещё быть важными друг для друга и всё ещё видеть в своих мыслях образ нашего общего «мы». 🤍
+            </p>
 
+            <p class="fa">
+                اما میان تمام این‌ها چیزی باقی می‌ماند که باعث می‌شود هنوز لحظه‌های خوب را به یاد بیاوریم، هنوز برای یکدیگر مهم باشیم و هنوز در ذهنمان تصویری از «ما»ی مشترکمان وجود داشته باشد. 🤍
+            </p>
 
-        <p class="paragraph">
-            Скажем:
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            «Помнишь? Тогда мы ещё были здесь и даже не представляли, какой долгий путь нам предстоит пройти».
-        </p>
+        <!-- 21 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            И я очень надеюсь, что однажды мы действительно дойдём до этого момента. 🤍
-        </p>
+            <p class="ru">
+                И для меня это очень важно.
+            </p>
 
+            <p class="fa">
+                و این برای من خیلی مهم است.
+            </p>
 
-        <p class="paragraph">
-            Но сегодня, прежде всего, я хочу поздравить с днём рождения именно тебя.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Того человека, которым ты являешься.
-        </p>
+        <!-- 22 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Того человека, которым ты становишься.
-        </p>
+            <p class="ru">
+                Любовь моя, ✨
+            </p>
 
+            <p class="fa">
+                عشق من، ✨
+            </p>
 
-        <p class="paragraph">
-            За весь путь, который ты уже прошёл.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            И за весь путь, который ещё ждёт тебя впереди. ✨
-        </p>
+        <!-- 23 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Любовь моя, 🤍
-        </p>
+            <p class="ru">
+                возможно, ты даже не знаешь, какое большое место в моей памяти занимают некоторые самые простые твои поступки.
+            </p>
 
+            <p class="fa">
+                شاید حتی ندانی که بعضی از ساده‌ترین کارهایت چه جای بزرگی در خاطرات من دارند.
+            </p>
 
-        <p class="paragraph">
-            если бы на твой день рождения я могла загадать только одно желание, наверное, я бы пожелала тебе всегда иметь хотя бы одну причину быть счастливым.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            А если однажды ты устанешь, если однажды всё станет слишком сложным, если однажды тебе покажется, что дорога слишком длинная, я хочу, чтобы ты помнил:
-        </p>
+        <!-- 24 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            в этом мире был человек, который смотрел на тебя и видел в тебе столько ценного. 🫂🤍
-        </p>
+            <p class="ru">
+                Иногда одна фраза, один взгляд, одна улыбка, короткое сообщение или даже самый обычный момент, который ты сам мог забыть через несколько минут, для меня становился воспоминанием, которое я помню до сих пор.
+            </p>
 
+            <p class="fa">
+                گاهی یک جمله، یک نگاه، یک لبخند، یک پیام کوتاه یا حتی معمولی‌ترین لحظه‌ای که خودت شاید چند دقیقه بعد فراموشش کرده باشی، برای من تبدیل به خاطره‌ای شده که هنوز هم آن را به یاد دارم.
+            </p>
 
-        <p class="paragraph">
-            Это письмо может быть всего лишь несколькими страницами слов.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            Но за каждым из этих слов есть мысль, воспоминание, чувство и маленькая часть тех дней, которые прошли вместе с тобой.
-        </p>
+        <!-- 25 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Поэтому с днём рождения, любовь моя. 🎂🤍
-        </p>
+            <p class="ru">
+                Я не всегда запоминаю в деталях большие события своей жизни.
+            </p>
 
+            <p class="fa">
+                من همیشه اتفاق‌های بزرگ زندگی‌ام را با تمام جزئیات به یاد نمی‌آورم.
+            </p>
 
-        <p class="paragraph">
-            Я надеюсь, что новый год твоей жизни будет наполнен событиями, о которых спустя несколько лет ты будешь вспоминать с улыбкой.
-        </p>
+        </div>
 
 
-        <p class="paragraph">
-            И если однажды ты снова перечитаешь это письмо, просто запомни одну вещь:
-        </p>
+        <!-- 26 -->
 
+        <div class="letter-block">
 
-        <p class="paragraph">
-            Однажды, в один день рождения, один человек сел и написал все эти слова для своей любви. 🤍✨
-        </p>
+            <p class="ru">
+                Но некоторые маленькие моменты с тобой почему-то навсегда остались в моей памяти. 🌙
+            </p>
+
+            <p class="fa">
+                اما بعضی از لحظه‌های کوچک با تو، به دلیلی، برای همیشه در ذهنم مانده‌اند. 🌙
+            </p>
+
+        </div>
+
+
+        <!-- 27 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Наверное, потому что в них был ты.
+            </p>
+
+            <p class="fa">
+                شاید چون تو در آن لحظه‌ها حضور داشتی.
+            </p>
+
+        </div>
+
+
+        <!-- 28 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И мне кажется, это одна из самых удивительных вещей в любви к человеку:
+            </p>
+
+            <p class="fa">
+                و به نظرم این یکی از شگفت‌انگیزترین چیزها درباره دوست داشتن یک آدم است:
+            </p>
+
+        </div>
+
+
+        <!-- 29 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                его присутствие со временем начинает придавать смысл даже самым обычным вещам.
+            </p>
+
+            <p class="fa">
+                حضور او با گذشت زمان حتی به معمولی‌ترین چیزها هم معنا می‌دهد.
+            </p>
+
+        </div>
+
+
+        <!-- 30 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Одна песня может напомнить о нём.<br>
+                Одна дата.<br>
+                Одна фраза.<br>
+                Какое-то определённое место.<br>
+                Даже совершенно обычное событие. 🎵
+            </p>
+
+            <p class="fa">
+                یک آهنگ می‌تواند تو را به یاد او بیندازد.<br>
+                یک تاریخ.<br>
+                یک جمله.<br>
+                یک مکان خاص.<br>
+                حتی یک اتفاق کاملاً معمولی. 🎵
+            </p>
+
+        </div>
+
+
+        <!-- 31 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И вдруг посреди обычного дня ты понимаешь, что твои мысли снова вернулись к человеку, которого ты любишь.
+            </p>
+
+            <p class="fa">
+                و ناگهان وسط یک روز معمولی می‌فهمی که دوباره فکرت به سمت کسی برگشته که دوستش داری.
+            </p>
+
+        </div>
+
+
+        <!-- 32 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Для меня очень многие из этих маленьких вещей — это ты.
+            </p>
+
+            <p class="fa">
+                برای من، خیلی از این چیزهای کوچک، تو هستی.
+            </p>
+
+        </div>
+
+
+        <!-- 33 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Любовь моя, 🤍
+            </p>
+
+            <p class="fa">
+                عشق من، 🤍
+            </p>
+
+        </div>
+
+
+        <!-- 34 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                я люблю тебя не только в те моменты, когда всё хорошо.
+            </p>
+
+            <p class="fa">
+                من تو را فقط در لحظه‌هایی که همه‌چیز خوب است دوست ندارم.
+            </p>
+
+        </div>
+
+
+        <!-- 35 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Я узнала тебя со всеми твоими сложностями.
+            </p>
+
+            <p class="fa">
+                من تو را با تمام پیچیدگی‌هایت شناخته‌ام.
+            </p>
+
+        </div>
+
+
+        <!-- 36 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                С твоими мечтами, тревогами, упрямством, молчанием, смехом, хорошими днями и теми днями, когда ты сам, возможно, не совсем понимаешь, чего хочешь.
+            </p>
+
+            <p class="fa">
+                با رویاهایت، نگرانی‌هایت، لجبازی‌هایت، سکوتت، خنده‌هایت، روزهای خوبت و آن روزهایی که شاید خودت هم کاملاً نمی‌دانی چه می‌خواهی.
+            </p>
+
+        </div>
+
+
+        <!-- 37 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И, наверное, для меня настоящая любовь именно в этом:
+            </p>
+
+            <p class="fa">
+                و شاید برای من عشق واقعی دقیقاً همین باشد:
+            </p>
+
+        </div>
+
+
+        <!-- 38 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                не просто любить образ человека, которого ты создал в своей голове, а постепенно узнавать настоящего его — и, узнавая всё больше, всё равно продолжать ценить его. 🫶🏻
+            </p>
+
+            <p class="fa">
+                نه اینکه فقط تصویری را که از یک آدم در ذهنت ساخته‌ای دوست داشته باشی، بلکه کم‌کم خودِ واقعی او را بشناسی و با وجود شناخت بیشتر، همچنان به ارزش او باور داشته باشی. 🫶🏻
+            </p>
+
+        </div>
+
+
+        <!-- 39 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Я не хочу делать из тебя идеального человека.
+            </p>
+
+            <p class="fa">
+                من نمی‌خواهم از تو یک آدم بی‌نقص بسازم.
+            </p>
+
+        </div>
+
+
+        <!-- 40 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Я просто хочу, чтобы ты оставался собой.
+            </p>
+
+            <p class="fa">
+                فقط می‌خواهم خودت باقی بمانی.
+            </p>
+
+        </div>
+
+
+        <!-- 41 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Тем самым человеком, у которого есть мечты, который иногда ошибается, учится, движется вперёд, иногда останавливается, а потом снова продолжает свой путь.
+            </p>
+
+            <p class="fa">
+                همان آدمی که رویاهایی دارد، گاهی اشتباه می‌کند، یاد می‌گیرد، به جلو حرکت می‌کند، گاهی می‌ایستد و بعد دوباره مسیرش را ادامه می‌دهد.
+            </p>
+
+        </div>
+
+
+        <!-- 42 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И я очень хочу, чтобы та часть тебя, которая мечтает о будущем, всегда оставалась живой. ✨
+            </p>
+
+            <p class="fa">
+                و خیلی می‌خواهم آن بخشی از وجودت که برای آینده رویا می‌بیند، همیشه زنده بماند. ✨
+            </p>
+
+        </div>
+
+
+        <!-- 43 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Я надеюсь, что ты добьёшься всего, ради чего стараешься.
+            </p>
+
+            <p class="fa">
+                امیدوارم به تمام چیزهایی که برایشان تلاش می‌کنی برسی.
+            </p>
+
+        </div>
+
+
+        <!-- 44 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Той жизни, которую ты представляешь в своих мечтах.
+            </p>
+
+            <p class="fa">
+                به همان زندگی‌ای که در رویاهایت تصور می‌کنی.
+            </p>
+
+        </div>
+
+
+        <!-- 45 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Тех успехов, которые сегодня могут казаться ещё далёкими.
+            </p>
+
+            <p class="fa">
+                به آن موفقیت‌هایی که شاید امروز هنوز دور به نظر برسند.
+            </p>
+
+        </div>
+
+
+        <!-- 46 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Того дня, когда ты сможешь оглянуться назад и сказать самому себе:
+            </p>
+
+            <p class="fa">
+                به روزی که بتوانی به گذشته نگاه کنی و به خودت بگویی:
+            </p>
+
+        </div>
+
+
+        <!-- 47 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                «Я действительно смог». 🌟
+            </p>
+
+            <p class="fa">
+                «من واقعاً توانستم». 🌟
+            </p>
+
+        </div>
+
+
+        <!-- 48 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И если однажды ты придёшь к этому дню, я надеюсь, что ты вспомнишь и тот путь, который прошёл.
+            </p>
+
+            <p class="fa">
+                و اگر روزی به آن روز برسی، امیدوارم مسیری را که طی کردی هم به یاد بیاوری.
+            </p>
+
+        </div>
+
+
+        <!-- 49 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Те дни, когда ты только начинал, когда многое ещё было неизвестно, но ты всё равно продолжал идти.
+            </p>
+
+            <p class="fa">
+                روزهایی را که تازه شروع کرده بودی، زمانی که هنوز خیلی چیزها نامعلوم بودند، اما با این حال به مسیرت ادامه دادی.
+            </p>
+
+        </div>
+
+
+        <!-- 50 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И, возможно, я тоже буду маленькой частью этих воспоминаний. 🤍
+            </p>
+
+            <p class="fa">
+                و شاید من هم بخش کوچکی از آن خاطرات باشم. 🤍
+            </p>
+
+        </div>
+
+
+        <!-- 51 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Я не знаю, каким будет будущее, любовь моя.
+            </p>
+
+            <p class="fa">
+                نمی‌دانم آینده چگونه خواهد بود، عشق من.
+            </p>
+
+        </div>
+
+
+        <!-- 52 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Не знаю, где мы будем через несколько лет, что изменится, какие люди появятся в нашей жизни и какие дороги нам ещё предстоит пройти.
+            </p>
+
+            <p class="fa">
+                نمی‌دانم چند سال دیگر کجا خواهیم بود، چه چیزهایی تغییر خواهند کرد، چه آدم‌هایی وارد زندگی‌مان خواهند شد و چه مسیرهایی هنوز باید طی کنیم.
+            </p>
+
+        </div>
+
+
+        <!-- 53 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Но я знаю одно:
+            </p>
+
+            <p class="fa">
+                اما یک چیز را می‌دانم:
+            </p>
+
+        </div>
+
+
+        <!-- 54 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                сегодня одно из моих самых больших желаний для тебя — чтобы жизнь была к тебе добра. 🌙
+            </p>
+
+            <p class="fa">
+                امروز یکی از بزرگ‌ترین آرزوهایم برای تو این است که زندگی با تو مهربان باشد. 🌙
+            </p>
+
+        </div>
+
+
+        <!-- 55 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Чтобы твоё сердце меньше уставало.<br>
+                Чтобы ты чаще улыбался.<br>
+                Чтобы всё, ради чего ты стараешься, однажды оказалось у тебя в руках.
+            </p>
+
+            <p class="fa">
+                اینکه قلبت کمتر خسته شود.<br>
+                اینکه بیشتر لبخند بزنی.<br>
+                اینکه تمام چیزهایی که برایشان تلاش می‌کنی، روزی در دستانت قرار بگیرند.
+            </p>
+
+        </div>
+
+
+        <!-- 56 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Чтобы, идя к своим мечтам, ты никогда не потерял самого себя.
+            </p>
+
+            <p class="fa">
+                اینکه در مسیر رسیدن به رویاهایت، هیچ‌وقت خودت را گم نکنی.
+            </p>
+
+        </div>
+
+
+        <!-- 57 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И если жизнь позволит, я хочу помнить твои дни рождения и через много лет. 🎂
+            </p>
+
+            <p class="fa">
+                و اگر زندگی اجازه بدهد، می‌خواهم سال‌ها بعد هم تولدهایت را به یاد داشته باشم. 🎂
+            </p>
+
+        </div>
+
+
+        <!-- 58 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Возможно, однажды мы будем совершенно в другом месте, с жизнью, которую сегодня даже не можем представить.
+            </p>
+
+            <p class="fa">
+                شاید روزی در جایی کاملاً متفاوت باشیم، با زندگی‌ای که امروز حتی نمی‌توانیم تصورش کنیم.
+            </p>
+
+        </div>
+
+
+        <!-- 59 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И, может быть, тогда мы снова посмотрим на это письмо и улыбнёмся.
+            </p>
+
+            <p class="fa">
+                و شاید آن روز دوباره به این نامه نگاه کنیم و لبخند بزنیم.
+            </p>
+
+        </div>
+
+
+        <!-- 60 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Скажем:
+            </p>
+
+            <p class="fa">
+                و بگوییم:
+            </p>
+
+        </div>
+
+
+        <!-- 61 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                «Помнишь? Тогда мы ещё были здесь и даже не представляли, какой долгий путь нам предстоит пройти».
+            </p>
+
+            <p class="fa">
+                «یادت هست؟ آن زمان هنوز اینجا بودیم و حتی تصور نمی‌کردیم چه مسیر طولانی‌ای پیش رو داریم.»
+            </p>
+
+        </div>
+
+
+        <!-- 62 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И я очень надеюсь, что однажды мы действительно дойдём до этого момента. 🤍
+            </p>
+
+            <p class="fa">
+                و خیلی امیدوارم روزی واقعاً به آن لحظه برسیم. 🤍
+            </p>
+
+        </div>
+
+
+        <!-- 63 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Но сегодня, прежде всего, я хочу поздравить с днём рождения именно тебя.
+            </p>
+
+            <p class="fa">
+                اما امروز، قبل از هر چیز، می‌خواهم تولد خودِ تو را تبریک بگویم.
+            </p>
+
+        </div>
+
+
+        <!-- 64 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Того человека, которым ты являешься.
+            </p>
+
+            <p class="fa">
+                برای همان آدمی که هستی.
+            </p>
+
+        </div>
+
+
+        <!-- 65 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Того человека, которым ты становишься.
+            </p>
+
+            <p class="fa">
+                برای همان آدمی که در حال تبدیل شدن به او هستی.
+            </p>
+
+        </div>
+
+
+        <!-- 66 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                За весь путь, который ты уже прошёл.
+            </p>
+
+            <p class="fa">
+                برای تمام مسیری که تا امروز طی کرده‌ای.
+            </p>
+
+        </div>
+
+
+        <!-- 67 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И за весь путь, который ещё ждёт тебя впереди. ✨
+            </p>
+
+            <p class="fa">
+                و برای تمام مسیری که هنوز در آینده منتظر توست. ✨
+            </p>
+
+        </div>
+
+
+        <!-- 68 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Любовь моя, 🤍
+            </p>
+
+            <p class="fa">
+                عشق من، 🤍
+            </p>
+
+        </div>
+
+
+        <!-- 69 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                если бы на твой день рождения я могла загадать только одно желание, наверное, я бы пожелала тебе всегда иметь хотя бы одну причину быть счастливым.
+            </p>
+
+            <p class="fa">
+                اگر در روز تولدت فقط می‌توانستم یک آرزو برایت داشته باشم، احتمالاً آرزو می‌کردم همیشه حداقل یک دلیل برای خوشحال بودن داشته باشی.
+            </p>
+
+        </div>
+
+
+        <!-- 70 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                А если однажды ты устанешь, если однажды всё станет слишком сложным, если однажды тебе покажется, что дорога слишком длинная, я хочу, чтобы ты помнил:
+            </p>
+
+            <p class="fa">
+                و اگر روزی خسته شدی، اگر روزی همه‌چیز بیش از حد سخت شد، اگر روزی احساس کردی مسیر خیلی طولانی است، می‌خواهم یادت باشد:
+            </p>
+
+        </div>
+
+
+        <!-- 71 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                в этом мире был человек, который смотрел на тебя и видел в тебе столько ценного. 🫂🤍
+            </p>
+
+            <p class="fa">
+                در این دنیا کسی بوده که به تو نگاه می‌کرد و این‌همه ارزش را در وجودت می‌دید. 🫂🤍
+            </p>
+
+        </div>
+
+
+        <!-- 72 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Это письмо может быть всего лишь несколькими страницами слов.
+            </p>
+
+            <p class="fa">
+                این نامه شاید فقط چند صفحه کلمه باشد.
+            </p>
+
+        </div>
+
+
+        <!-- 73 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Но за каждым из этих слов есть мысль, воспоминание, чувство и маленькая часть тех дней, которые прошли вместе с тобой.
+            </p>
+
+            <p class="fa">
+                اما پشت تک‌تک این کلمات، یک فکر، یک خاطره، یک احساس و بخش کوچکی از روزهایی وجود دارد که با تو گذشتند.
+            </p>
+
+        </div>
+
+
+        <!-- 74 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Поэтому с днём рождения, любовь моя. 🎂🤍
+            </p>
+
+            <p class="fa">
+                پس تولدت مبارک، عشق من. 🎂🤍
+            </p>
+
+        </div>
+
+
+        <!-- 75 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Я надеюсь, что новый год твоей жизни будет наполнен событиями, о которых спустя несколько лет ты будешь вспоминать с улыбкой.
+            </p>
+
+            <p class="fa">
+                امیدوارم سال جدید زندگی‌ات پر از اتفاق‌هایی باشد که چند سال بعد با لبخند به یادشان بیاوری.
+            </p>
+
+        </div>
+
+
+        <!-- 76 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                И если однажды ты снова перечитаешь это письмо, просто запомни одну вещь:
+            </p>
+
+            <p class="fa">
+                و اگر روزی دوباره این نامه را خواندی، فقط یک چیز را به خاطر بسپار:
+            </p>
+
+        </div>
+
+
+        <!-- 77 -->
+
+        <div class="letter-block">
+
+            <p class="ru">
+                Однажды, в один день рождения, один человек сел и написал все эти слова для своей любви. 🤍✨
+            </p>
+
+            <p class="fa">
+                روزی، در یک روز تولد، یک نفر نشست و تمام این کلمات را برای عشقش نوشت. 🤍✨
+            </p>
+
+        </div>
 
 
     </div>
 
 
-    <!-- ================= FINAL ================= -->
+    <!-- ==========================================
+         FINAL
+    ========================================== -->
 
     <div class="final">
 
@@ -814,16 +1851,17 @@ button:hover {
 
     </div>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- ================= JAVASCRIPT ================= -->
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
 
 <script>
-
-/* Password */
 
 function openLetter() {
 
@@ -836,30 +1874,24 @@ function openLetter() {
 
     if (password === "2312403") {
 
-        /* Hide password */
-
-        document.getElementById("passwordPage")
+        document
+            .getElementById("passwordPage")
             .style.display = "none";
 
 
-        /* Show letter */
-
-        document.getElementById("letterPage")
+        document
+            .getElementById("letterPage")
             .style.display = "block";
 
 
         window.scrollTo(0, 0);
 
 
-        /*
-        Music:
-        We attempt autoplay after the user's
-        click on the login button.
-        */
-
         playSong();
 
-    } else {
+    }
+
+    else {
 
         error.textContent =
             "رمز درست نیست 🤍";
@@ -873,43 +1905,35 @@ function openLetter() {
 
 document
     .getElementById("password")
-    .addEventListener("keydown", function(event) {
+    .addEventListener(
+        "keydown",
+        function(event) {
 
-        if (event.key === "Enter") {
+            if (event.key === "Enter") {
 
-            openLetter();
+                openLetter();
+
+            }
 
         }
+    );
 
-    });
 
-
-/*
-------------------------------------------------
-Music attempt
-------------------------------------------------
-
-SoundCloud itself cannot reliably be forced
-to autoplay from another page.
-
-So after the correct password we open the
-song link in a new tab.
-
-The Our Song button remains available.
-------------------------------------------------
-*/
+/* Music */
 
 function playSong() {
 
     /*
-    Browser autoplay restrictions mean that
-    SoundCloud may require the user to tap
-    the Our Song button.
+    SoundCloud autoplay is controlled
+    by browser restrictions.
+
+    The user can press Our Song.
     */
 
 }
 
 </script>
+
 
 </body>
 </html>
